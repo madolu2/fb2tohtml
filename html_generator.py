@@ -19,6 +19,7 @@ class HTMLGenerator:
         '\t<meta charset="UTF-8">\n' \
         '\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' \
         f'\t<title>{page_title}</title>\n' \
+        '\t<link href = "css/base.css">\n' \
         '</head>\n<body>\n'
         document += description
         for section in sections:
