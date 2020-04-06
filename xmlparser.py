@@ -33,7 +33,7 @@ class XMLParser:
                 p_title = title.find('p').text
                 p_texts = child.findall('p')
                 for p_text in p_texts:
-                    texts.append(p_text.text.replace('\xa0', ' '))
+                    texts.append(p_text.text)
                 dict = {'p-title': p_title,
                         'p-texts': texts}
                 dict_sections.append(dict)
