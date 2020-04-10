@@ -10,28 +10,29 @@ class XMLParser:
             for element in  self.root.iter():
                 element.tag = element.tag.partition('}')[-1]
         except AttributeError as e:
-            with open('log.txt', 'a') as logfile:
-                import datetime
-                logfile.write(f'{datetime.datetime.now()} Error in __init__ {self.filename} -> {e}\n')
+            self.logging('__init__', e)
+
+    def logging(self, module, exceprion):
+        with open('log.txt', 'a') as logfile:
+            import datetime
+            logfile.write(f'{datetime.datetime.now()} Error in {module} {self.filename} -> {exceprion}\n')
 
     def get_description(self):
         try:
-            author = self.root.find('./description/title-info/author/first-name').text, self.root.find('./description/title-info/author/last-name').text
-            annotation = self.root.find('./description/title-info/annotation/p').text
-            book_title = self.root.find('./description/title-info/book-title').text
+            author = self.root.find('.//author/first-name').text, self.root.find('.//author/last-name').text
+            annotation = self.root.find('.//annotation/p').text
+            book_title = self.root.find('.//book-title').text
             description = {'author': author,
                             'annotation': annotation,
                             'book-title': book_title}
             return description
         except AttributeError as e:
-            with open('log.txt', 'a') as logfile:
-                import datetime
-                logfile.write(f'{datetime.datetime.now()} Error in get_description {self.filename} -> {e}\n')
+            self.logging('get_description', e)
 
     def get_text(self):
         try:
             #Get all sections from book
-            sections = self.root.findall('./body/section')
+            sections = self.root.findall('.//section')
             #Create array for sections
             sections_array = []
             for section in sections:
@@ -84,8 +85,6 @@ class XMLParser:
                 sections_array.append(section_dict)
             return sections_array
         except AttributeError as e:
-            with open('log.txt', 'a') as logfile:
-                import datetime
-                logfile.write(f'{datetime.datetime.now()}\n Error in get_text ({self.filename}) ->\n {e}\n')
+            self.logging('get_text', e)
         
                 
