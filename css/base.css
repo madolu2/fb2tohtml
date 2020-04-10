@@ -1,0 +1,29 @@
+* {
+    background-color: #e8e8e8;
+    font-size: large;
+}
+
+#name, #book-title {
+    text-align: center;
+    font-weight: bold;
+}
+
+#annotation {
+    max-width: 40%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+h2 {
+    text-align: center;
+}
+.section, .sub-section {
+    text-indent: 1.5em;
+    max-width: 35%;
+    margin-left: auto;
+    margin-right: auto;
+    text-align: justify;
+}
+
+

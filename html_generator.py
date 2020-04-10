@@ -6,11 +6,25 @@ class HTMLGenerator:
         f'<p id = "book-title">{book_title}</p> <br>\n<div>\n'
         return description
 
-    def generate_section(self, title, text):
-        section = f'<div class = "section">\n' \
-        f'<h2>{title}</h2> <br>' \
-        f'<p class = "text">{text}</p> <br>\n</div>\n'
+    def generate_section(self, title, text, sub_section = False):
+        if sub_section:
+            section = f'<div class = "sub-section">\n'
+            for t in title:
+                section += f'<h3>{t}</h3>\n'
+            section += f'{text}\n</div>\n'
+        else:
+            section = f'<div class = "section">\n'
+            for t in title:
+                section += f'<h2>{t}</h2>\n'
+            section += f'{text}\n</div>\n'
         return section
+
+    def wrap_paragraph(self, paragraphs):
+        wrapped_paragraphs = ''
+        for paragraph in paragraphs:
+            if paragraph:
+                wrapped_paragraphs += (f'<p>{paragraph}</p>\n')
+        return wrapped_paragraphs
 
     def generate_document(self, page_title, description, sections):
         document = '<!DOCTYPE html>\n' \
@@ -19,12 +33,10 @@ class HTMLGenerator:
         '\t<meta charset="UTF-8">\n' \
         '\t<meta name="viewport" content="width=device-width, initial-scale=1.0">\n' \
         f'\t<title>{page_title}</title>\n' \
-        '\t<link href = "css/base.css">\n' \
+        '\t<link rel="stylesheet" href="../css/base.css">\n' \
         '</head>\n<body>\n'
         document += description
         for section in sections:
-            document += sections
+            document += section
         document += '</body>\n</html>'
-
-        with open(f'{page_title}.html', 'w') as file:
-            file.write(document)
+        return document, page_title

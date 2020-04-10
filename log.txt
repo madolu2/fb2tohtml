@@ -1,0 +1,11 @@
+2020-04-10 09:39:14.078468
+ Error in get_text (books/Dorofeev_Dzhedayskie-tehniki-Kak-vospitat-svoyu-obezyanu-opustoshit-inboks-i-sberech-mysletoplivo.SVhkuA.481115.fb2) -> 'NoneType' object has no attribute 'text'
+2020-04-10 10:45:03.845731
+ Error in get_text (books/Dorofeev_Dzhedayskie-tehniki-Kak-vospitat-svoyu-obezyanu-opustoshit-inboks-i-sberech-mysletoplivo.SVhkuA.481115.fb2) ->
+ 'list' object has no attribute 'text'
+2020-04-10 10:55:26.232303
+ Error in get_text (books/Dorofeev_Dzhedayskie-tehniki-Kak-vospitat-svoyu-obezyanu-opustoshit-inboks-i-sberech-mysletoplivo.SVhkuA.481115.fb2) ->
+ 'list' object has no attribute 'text'
+2020-04-10 10:58:24.365542
+ Error in get_text (books/Dorofeev_Dzhedayskie-tehniki-Kak-vospitat-svoyu-obezyanu-opustoshit-inboks-i-sberech-mysletoplivo.SVhkuA.481115.fb2) ->
+ 'str' object has no attribute 'append'
