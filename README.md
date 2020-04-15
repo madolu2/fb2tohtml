@@ -1,6 +1,6 @@
 # fb2 to html
 Конвертер файлов из FictionBook2 в HTML    
-Проект состоит из:   
+Проект состоит из:
 - xmlparser    
 Парсер XML.
 - html_generator    
