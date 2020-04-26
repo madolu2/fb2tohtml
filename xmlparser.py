@@ -31,8 +31,9 @@ class XMLParser:
 
     def get_text(self):
         try:
+            bodys = self.root.findall('body')
             #Get all sections from book
-            sections = self.root.findall('.//section')
+            sections = bodys[0].findall('.//section')
             #Create array for sections
             sections_array = []
             for section in sections:

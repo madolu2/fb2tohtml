@@ -1,5 +1,5 @@
 * {
-    background-color: #e8e8e8;
+    background-color: #f0f0f0;
     font-size: large;
 }
 
@@ -26,4 +26,33 @@ h2 {
     text-align: justify;
 }
 
+#subject-index {
+    width: 200px;
+    position: absolute;
+    right: 0;
+    top: 0;
+    text-align: right;
+}
 
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    text-decoration: underline;
+    
+}
+
+button > a {
+    outline: 0 !important;
+    padding: 5px;
+    background-color: #d4d4d4;
+    text-decoration: none !important;
+    border: none;
+    border-radius: 20px;
+    margin: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+}
